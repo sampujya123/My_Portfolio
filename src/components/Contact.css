@@ -1,0 +1,47 @@
+.contact {
+    padding: 20px;
+    text-align: center;
+    background-color: #d6d6d6 ;
+    height: 100vh;
+  }
+  
+  .contact h2 {
+    margin-bottom: 10px;
+  }
+
+  .Mycard {
+    width: 300px; 
+    height: 200px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: #d6d6d6; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.3s ease, transform 0.3s ease; 
+    margin: 20px; 
+    flex: 4;
+  }
+  
+  .Mycard:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-5px);
+    background-color: #4f4f51;
+  }
+
+.thankyou-button {
+  padding: 10px 20px; 
+  font-size: 16px; 
+  font-weight: bold; 
+  background: linear-gradient(90deg, #f58f7c, #f2c4ce); 
+  color: #4f4f51; 
+  border: none;
+  border-radius: 5px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer; 
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.thankyou-button:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}

@@ -1,0 +1,40 @@
+.education {
+  padding: 20px;
+  background-color: #d6d6d6; 
+  height: 100vh;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.table td, .table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+.subhead{
+  font-size: larger;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left;
+}
+.card{
+  flex: 1;cursor: pointer;
+  background-color: #d6d6d6;
+}
+.card:hover{
+  flex:3;
+  background-color: #d6d6d6;
+}
+.certi{
+  border-radius: 2%;
+}
