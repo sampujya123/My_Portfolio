@@ -32,7 +32,7 @@ const Header = () => {
             <p>Discover my work and projects.</p>
           </div>
           <div className="col-6">
-            <img className='fade-in'src={`/photo.jpeg`} alt="sampujya" height={400} width={300} />
+            <img className='fade-in'src={`public/photo.jpeg`} alt="sampujya" height={400} width={300} />
           </div>
         </div>   
       </div>
