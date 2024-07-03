@@ -1,37 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import './Navbar.css';
-
+// import './css/Navbar.css';
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
   return (
-    <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand">SAMPUJYA MUSUNURI</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav ms-auto">
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/" exact activeClassName="active">
-              Home
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/about" activeClassName="active">
-              About
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/education" activeClassName="active">
-              Education
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/contact" activeClassName="active">
-              Contact
-            </NavLink>
-          </li>
-        </ul>
+    <nav className="bg-gray-800 md:p-4">
+      <div className="container md:mx-auto p-0 block md:flex items-center justify-between">
+        <span className='flex justify-between p-3 md:p-0'>
+        <a className="text-white text-lg font-semibold no-underline" href="/">SAMPUJYA MUSUNURI</a>
+        <button
+          className="text-gray-300 md:hidden"
+          onClick={toggleMenu}
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+        </span>
+        <div className={`md:bg-gray-800 bg-gray-100 md:flex space-x-4 ${isOpen ? 'block' : 'hidden'}`}>
+          <NavLink
+            className="block md:text-gray-300 text-gray-950 hover:text-white px-3 py-2 rounded no-underline font-medium md:text-lg text-base text-right"
+            activeClassName="bg-gray-900"
+            exact
+            to="/"
+            onClick={toggleMenu}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            className="block md:text-gray-300 text-gray-950 hover:text-white px-3 py-2 rounded no-underline font-medium md:text-lg text-base text-right"
+            activeClassName="bg-gray-900"
+            to="/about"
+            onClick={toggleMenu}
+          >
+            About
+          </NavLink>
+          <NavLink
+            className="block md:text-gray-300 text-gray-950 hover:text-white px-3 py-2 rounded no-underline font-medium md:text-lg text-base text-right"
+            activeClassName="bg-gray-900"
+            to="/education"
+            onClick={toggleMenu}
+          >
+            Education
+          </NavLink>
+          <NavLink
+            className="block md:text-gray-300 text-gray-950 hover:text-white px-3 py-2 rounded no-underline font-medium md:text-lg text-base text-right"
+            activeClassName="bg-gray-900"
+            to="/contact"
+            onClick={toggleMenu}
+          >
+            Contact
+          </NavLink>
+        </div>
       </div>
     </nav>
   );

@@ -1,0 +1,36 @@
+.navbar {
+    background-color: #2c2b30;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar .navbar-brand{
+    color:#f58f7c;
+    text-decoration: wavy;
+  }
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  
+  .navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: #f2c4ce !important; 
+    background-color: transparent;
+    border:1px solid #f58f7c;
+  }
+
+  .navbar-nav .nav-link {
+    color: #f58f7c; 
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #f2b0be; 
+  }
+
+
+  
