@@ -1,0 +1,42 @@
+.about {
+    padding: 20px;
+    /* background-color: #d6d6d6; */
+    /* height: 100vh; */
+  }
+  
+  .about h1 {
+    margin-bottom: 10px;
+  }
+
+  .about p{
+    text-align: left;
+    /* font-size: large; */
+  } 
+
+  .about img{
+    border-radius: 5%;
+    /* margin: 10px; */
+    background-color: #d6d6d6;
+    animation: scaleUp 1.5s ease-in-out;
+  }
+    @keyframes scaleUp {
+      from {
+        transform: scale(0.5);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+
+.subhead{
+    font-size: larger;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+ }
+
+ul,li{
+  text-align: left;
+  font-size: large;
+}

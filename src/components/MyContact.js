@@ -1,48 +1,44 @@
 import React from 'react';
-import './Contact.css';
-
+import './css/Contact.css';
+import images from './images';
 const MyContact = () => {
-  const handlePhoneClick = () => {
-    window.location.href = 'tel:+919133115115';
+  const handleClick = (event, link) => {
+    if (link.startsWith('tel:') || link.startsWith('mailto:')) {
+      event.preventDefault();
+      window.location.href = link;
+    }
   };
-
-  const handleEmailClick = () => {
-    window.location.href = 'mailto:sampujyam@gmail.com';
-  };
-
-  const handleClick = () => {
-    alert('Thank you for visting my Portfolio!'); 
-  };
-
+  const socialIcons = [
+    { src: images.callicon, alt: "call", link: 'tel:+919133115115', text: '+91 9133115115' },
+    { src: images.mailicon, alt: "mail", link: 'mailto:sampujyam@gmail.com', text: 'sampujyam@gmail.com' },
+    { src: images.linkedIn, alt: "linkedin logo", link: 'https://www.linkedin.com/in/sampujya-musunuri/', text: 'Linkedin profile' },
+    { src: images.githubicon, alt: "github", link: 'https://github.com/sampujya123', text: 'My Github link' },
+  ];
   return (
-    <section className="contact">
-      <h2>Contact Me</h2>
-      <div className="contact-info">
-        <div className='container'>
-          <div className='row'>
-            <div className='Mycard '>
-              <img className='con' src='call.PNG' alt='call' height={200} width={200}></img>
-              <a href="tel:+919133115115" className="phone-number" onClick={handlePhoneClick}>+91 9133115115</a><br></br>
-            </div>
-            <div className='Mycard'>
-              <img className='con' src='mail.PNG' alt='mail' height={200} width={200}></img>
-              <a href="mailto:sampujyam@gmail.com" className="email-address" onClick={handleEmailClick}>sampujyam@gmail.com</a><br></br>
-            </div>
-            <div className='Mycard '>
-              <img className='con' src='logolk.png' alt='linkedin logo' height={200} width={200}></img>
-              <a href='www.linkedin.com/in/sampujya-musunuri'>linkedin profile</a>
-            </div>
-            <div className='Mycard '>
-              <img className='con' src='github.PNG' alt='github' height={200} width={200}></img>
-              <a href="https://github.com/sampujya123">My Github link</a><br></br>
-           </div>
+    <section className="contact bg-slate-100 md:h-screen">
+      <h2 className='m-8'>Contact Me</h2>
+      <div className="contact-info md:my-20">
+          <div className='container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-3'>
+          {socialIcons.map((icon, index) => (
+              <div className='Mycard h-44 items-center' key={index}>
+                <img className='con w-20 h-20 rounded-full mx-auto mt-6 mb-3' src={icon.src} alt={icon.alt}></img>
+                <a 
+                  href={icon.link} 
+                  className="social-link no-underline md:text-lg text-base font-bold text-slate-800" 
+                  onClick={event => handleClick(event, icon.link)} 
+                  target={icon.link.startsWith('http') ? "_blank" : "_self"}
+                  rel={icon.link.startsWith('http') ? "noopener noreferrer" : ""}
+                >
+                  {icon.text}
+                </a>
+              </div>
+            ))}
          </div>
-        </div>
       </div>
       <div className="Thanku">
-      <button onClick={handleClick} className="thankyou-button">
-        Thank You
-      </button>
+      <button onClick={() => alert('Thank you for visiting my Portfolio!')} className="thankyou-button my-4">
+          Thank You
+        </button>
     </div>
     </section>
   );
